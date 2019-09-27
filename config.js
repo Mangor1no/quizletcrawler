@@ -1,4 +1,4 @@
 module.exports = {
-    crawlURL: 'https://quizlet.com/416273428/swm-tung-anh-flash-cards/',
+    crawlURL: 'https://quizlet.com/413008821/mln101-flash-cards/',
     exportURL: 'C:\\Users\\tlgde\\Desktop\\'
 }
