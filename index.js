@@ -21,13 +21,23 @@ let exportURL = URL.exportURL;
             quiz: e.childNodes
         }))
         quiz = [...quiz]
-        let questions = quiz.map(e => (e.quiz[0].innerText))
-        let answers = quiz.map(e => (e.quiz[1].innerText))
-        let textQuiz = {}
-        for (let i = 0; i < questions.length; i++) {
-            textQuiz[questions[i]] = answers[i];
+        if (quiz[0].quiz[0].innerText.length == 1) {
+            let questions = quiz.map(e => (e.quiz[1].innerText))
+            let answers = quiz.map(e => (e.quiz[0].innerText))
+            let textQuiz = {}
+            for (let i = 0; i < questions.length; i++) {
+                textQuiz[questions[i]] = answers[i];
+            }
+            return textQuiz;
+        } else {
+            let questions = quiz.map(e => (e.quiz[0].innerText))
+            let answers = quiz.map(e => (e.quiz[1].innerText))
+            let textQuiz = {}
+            for (let i = 0; i < questions.length; i++) {
+                textQuiz[questions[i]] = answers[i];
+            }
+            return textQuiz;
         }
-        return textQuiz;
     });
     try {
         if (fs.existsSync(exportURL + title)) {
